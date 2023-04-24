@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ChristianGPT</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div  class="left-sidebar">
+      <!-- Parameters -->
+      <div class="form-container">
+        <form>
+          <label for="model">Model</label>
+          <select id="model" name="model">
+            <option value="model1">Model 1</option>
+            <option value="model2">Model 2</option>
+            <option value="model3">Model 3</option>
+          </select>
+          
+          <label for="memory-type">Memory Type:</label>
+          <select id="memory-type" name="memory-type">
+            <option value="buffer_history">Buffer History</option>
+            <option value="buffer_window_memory">Buffer Window Memory</option>
+            <option value="entity_memory">Entity Memory</option>
+            <option value="knowledge_graph_memory">Knowledge Graph Memory</option>
+            <option value="summary_memory">Summary Memory</option>
+            <option value="summary_buffer_memory">Summary Buffer Memory</option>
+          </select>
+        
+          <label for="buffer-size">Buffer Size</label>
+          <input type="number" id="buffer-size" name="buffer-size">
+          
+          <input type="submit" value="Validate">
+        </form>        
+      </div>
+      <!-- New chat button -->
+      <div>
+        <button class="primary-button">New Chat</button>
+      </div>
+      <!-- Conversations -->
+      <div class="conv-list-container">
+        <div class="conversation-container">
+          <div class="conversation-icon">
+            <img src="{{ url_for('static', filename='img/message.svg') }}">
+          </div>
+          <div class="conversation-name">
+            <h3>Conversation 1</h3>
+          </div>
+          <div class="bin-icon">
+            <img src="{{ url_for('static', filename='img/bin.svg') }}">
+          </div>
+        </div>
+        <div class="conversation-container">
+          <div class="conversation-icon">
+            <img src="{{ url_for('static', filename='img/message.svg') }}">
+          </div>
+          <div class="conversation-name">
+            <h3>Conversation 1</h3>
+          </div>
+          <div class="bin-icon">
+            <img src="{{ url_for('static', filename='img/bin.svg') }}">
+          </div>
+        </div>
+      </div>
+      <div class="clear-container">
+        <button class="primary-button">Clean History</button> 
+      </div>
+    </div>
+    <!-- Main page -->
+    <div class="main-page">
+      <!-- Conversation -->
+      <div class="conv-container">
+        <div class="bot-msg-container">
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/robot.svg') }}">
+          </div>
+          <div class="bot-msg">
+            <p>Pour répondre à cette question, regardons la page text-start.html — le point de départ de l'exemple que nous allons utiliser dans cet article (une recette). Enregistrez une copie de ce fichier sur votre ordinateur car vous en aurez besoin pour les exercices qui vont suivre. Le corps de ce document contient plusieurs parties sans aucune balise ; elles sont seulement séparées par des retours chariots (obtenus en pressant la)</p>
+          </div>
+        </div>
+        <div class="user-msg-container">
+          <div class="user-msg">
+            <p>Pour répondre à cette question.</p>
+          </div>
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/user.svg') }}">
+          </div>
+        </div>
+        <div class="bot-msg-container">
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/robot.svg') }}">
+          </div>
+          <div class="bot-msg">
+            <p>Pour répondre à cette question, regardons la page text-start.html — le point de départ de l'exemple que nous allons utiliser dans cet article (une recette). Enregistrez une copie de ce fichier sur votre ordinateur car vous en aurez besoin pour les exercices qui vont suivre. Le corps de ce document contient plusieurs parties sans aucune balise ; elles sont seulement séparées par des retours chariots (obtenus en pressant la)</p>
+          </div>
+        </div>
+        <div class="user-msg-container">
+          <div class="user-msg">
+            <p>Pour répondre à cette question, regardons la page text-start.html — le point de départ de l'exemple que nous allons utiliser dans cet article (une recette). Enregistrez une copie de ce fichier sur votre ordinateur car vous en aurez besoin pour les exercices qui vont suivre. Le corps de ce document contient plusieurs parties sans aucune balise ; elles sont seulement séparées par des retours chariots (obtenus en pressant la)</p>
+          </div>
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/user.svg') }}">
+          </div>
+        </div>
+        <div class="bot-msg-container">
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/robot.svg') }}">
+          </div>
+          <div class="bot-msg">
+            <p>Pour répondre à cette question, regardons la page text-start.html — le point de départ de l'exemple que nous allons utiliser dans cet article (une recette). Enregistrez une copie de ce fichier sur votre ordinateur car vous en aurez besoin pour les exercices qui vont suivre. Le corps de ce document contient plusieurs parties sans aucune balise ; elles sont seulement séparées par des retours chariots (obtenus en pressant la)</p>
+          </div>
+        </div>
+        <div class="user-msg-container">
+          <div class="user-msg">
+            <p>Pour répondre à cette question.</p>
+          </div>
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/user.svg') }}">
+          </div>
+        </div>
+        <div class="bot-msg-container">
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/robot.svg') }}">
+          </div>
+          <div class="bot-msg">
+            <p>Pour répondre à cette question, regardons la page text-start.html — le point de départ de l'exemple que nous allons utiliser dans cet article (une recette). Enregistrez une copie de ce fichier sur votre ordinateur car vous en aurez besoin pour les exercices qui vont suivre. Le corps de ce document contient plusieurs parties sans aucune balise ; elles sont seulement séparées par des retours chariots (obtenus en pressant la)</p>
+          </div>
+        </div>
+        <div class="user-msg-container">
+          <div class="user-msg">
+            <p>Pour répondre à cette question, regardons la page text-start.html — le point de départ de l'exemple que nous allons utiliser dans cet article (une recette). Enregistrez une copie de ce fichier sur votre ordinateur car vous en aurez besoin pour les exercices qui vont suivre. Le corps de ce document contient plusieurs parties sans aucune balise ; elles sont seulement séparées par des retours chariots (obtenus en pressant la)</p>
+          </div>
+          <div class="circle-container">
+            <img src="{{ url_for('static', filename='img/user.svg') }}">
+          </div>
+        </div>
+      </div>
+      <!-- Input -->
+      <div class="input-container">
+        <div class="input-micro-icon">
+          <img src="{{ url_for('static', filename='img/micro.svg') }}">
+        </div>
+        <div class="input-image-icon">
+          <img src="{{ url_for('static', filename='img/image.svg') }}">
+        </div>
+        <div class="input-attach-icon">
+          <img src="{{ url_for('static', filename='img/attach.svg') }}">
+        </div>
+        <div class="input-field-container">
+          <input type="text" placeholder="Send a message...">
+        </div>
+        <div class="input-send-icon">
+          <img src="{{ url_for('static', filename='img/send-button.svg') }}">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+
+:root {
+    --menu-background: #161f24;
+    --menu-hover:#1f2c33;
+    --menu-selected:#bbbbbb;
+    --menu-text:#bbbbbb;
+    --menu-icon: #bbbbbb;
+
+    --conv-background:#1b262c;
+    --conv-bot-background:#354b57;
+    --conv-bot-text: white;
+    --conv-user-background:#3282b8;
+    --conv-user-text:white;
+    --conv-input-background:#354b57;
+    --conv-input-text:white;
+}
+
+/* :root {
+    --activityBarBadge-background: #007acc;
+    --checkbox-border: #6b6b6b;
+    --editor-background: #1e1e1e;
+    --editor-foreground: #d4d4d4;
+    --editor-inactiveSelection-background: #3a3d41;
+    --editor-selectionHighlight-background: #add6ff26;
+    --editorIndentGuide-activeBackground: #707070;
+    --editorIndentGuide-background: #404040;
+    --input-placeholderForeground: #a6a6a6;
+    --list-activeSelectionIconForeground: #ffffff;
+    --list-dropBackground: #383b3d;
+    --menu-background: #252526;
+    --menu-border: #454545;
+    --menu-foreground: #cccccc;
+    --menu-separatorBackground: #454545;
+    --ports-iconRunningProcessForeground: #369432;
+    --sideBarSectionHeader-background: #00000000;
+    --sideBarSectionHeader-border: #cccccc33;
+    --sideBarTitle-foreground: #bbbbbb;
+    --statusBarItem-remoteBackground: #16825d;
+    --statusBarItem-remoteForeground: #ffffff;
+    --tab-lastPinnedBorder: #cccccc33;
+    --terminal-inactiveSelectionBackground: #3a3d41;
+    --widget-border: #303031;
+  } */
+
+/* Main layout */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+}
+ 
+.left-sidebar {
+    flex: 0 0 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--menu-background);
+}
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--conv-background);
+    /* border-radius: 10px;
+    overflow: hidden; */
+
+    flex: 3;
+    padding: 10px;
+}
+
+.container div {
+}
+
+.conv-container{
+    flex: 1;
+    flex-direction: column;
+    overflow: auto;
+    background-color: transparent;
+}
+
+.input-container {
+    height: 60px;
+}
+
+/* Sidebar*/
+
+/* Conversation list*/
+
+.conv-list-container {
+    overflow: auto;
+    padding:5px;
+}
+
+.conversation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+    gap: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.conversation-container:hover {
+    cursor: pointer;
+    background-color: var(--menu-hover);
+}
+
+.conversation-icon, .bin-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color:transparent;
+}
+
+.conversation-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.bin-icon {
+    width: 10px;
+    height: 10px;
+}
+
+.conversation-icon img, .bin-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.conversation-name {
+    background-color: transparent;
+    flex: 1;
+    color: var(--menu-text)
+}
+
+
+/* Main page */
+.bot-msg-container, .user-msg-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.bot-msg-container {
+    justify-content: flex-start;
+    margin-right: 50px;
+}
+
+.user-msg-container {
+    justify-content: flex-end;
+    margin-left: 50px;
+}
+
+.bot-msg, .user-msg {
+    flex: 1;
+    border-radius: 15px;
+}
+
+.bot-msg {
+    background-color: var(--conv-bot-background);
+}
+
+.user-msg {
+    background-color: var(--conv-user-background);
+}
+
+.bot-msg *, .user-msg *{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    overflow: hidden; /* Prevents image overflow from circle */
+    background-color: grey; /* Optional background color for circle */
+  }
+  
+.circle-container img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: cover; /* Resizes image to fit inside circle */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+  }
+
+.input-micro-icon, .input-image-icon, .input-attach-icon, .input-send-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.input-micro-icon img, .input-image-icon img, .input-attach-icon img, .input-send-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.input-micro-icon img:hover, .input-image-icon img:hover, .input-attach-icon img:hover, .input-send-icon img:hover {
+    cursor: pointer;
+}
+
+.input-field-container {
+    flex: 1;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: var(--conv-input-background);
+}
+
+.input-container input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  
+.input-container input[type="text"]::placeholder {
+    color: #aaa;
+}
+  
+/* .chat-input-send {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #aaa;
+  }
+  
+.chat-input-send:hover {
+    color: #000;
+} */
+  
+  
