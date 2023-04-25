@@ -42,8 +42,13 @@
         </form>        
       </div>
       <!-- New chat button -->
-      <div>
-        <button class="primary-button">New Chat</button>
+      <div class="new-chat-container">
+        <div class="new-chat-container-icon">
+          <img src="{{ url_for('static', filename='img/write.svg')}}">
+        </div>
+        <div>
+          New chat
+        </div>
       </div>
       <!-- Conversations -->
       <div class="conv-list-container">
@@ -52,7 +57,7 @@
             <img src="{{ url_for('static', filename='img/message.svg') }}">
           </div>
           <div class="conversation-name">
-            <h3>Conversation 1</h3>
+            <h4>Conversation 1</h4>
           </div>
           <div class="bin-icon">
             <img src="{{ url_for('static', filename='img/bin.svg') }}">
@@ -63,7 +68,51 @@
             <img src="{{ url_for('static', filename='img/message.svg') }}">
           </div>
           <div class="conversation-name">
-            <h3>Conversation 1</h3>
+            <h4>Conversation 1</h4>
+          </div>
+          <div class="bin-icon">
+            <img src="{{ url_for('static', filename='img/bin.svg') }}">
+          </div>
+        </div>
+        <div class="conversation-container">
+          <div class="conversation-icon">
+            <img src="{{ url_for('static', filename='img/message.svg') }}">
+          </div>
+          <div class="conversation-name">
+            <h4>Conversation 1</h4>
+          </div>
+          <div class="bin-icon">
+            <img src="{{ url_for('static', filename='img/bin.svg') }}">
+          </div>
+        </div>
+        <div class="conversation-container">
+          <div class="conversation-icon">
+            <img src="{{ url_for('static', filename='img/message.svg') }}">
+          </div>
+          <div class="conversation-name">
+            <h4>Conversation 1</h4>
+          </div>
+          <div class="bin-icon">
+            <img src="{{ url_for('static', filename='img/bin.svg') }}">
+          </div>
+        </div>
+        <div class="conversation-container">
+          <div class="conversation-icon">
+            <img src="{{ url_for('static', filename='img/message.svg') }}">
+          </div>
+          <div class="conversation-name">
+            <h4>Conversation 1</h4>
+          </div>
+          <div class="bin-icon">
+            <img src="{{ url_for('static', filename='img/bin.svg') }}">
+          </div>
+        </div>
+        <div class="conversation-container">
+          <div class="conversation-icon">
+            <img src="{{ url_for('static', filename='img/message.svg') }}">
+          </div>
+          <div class="conversation-name">
+            <h4>Conversation 1</h4>
           </div>
           <div class="bin-icon">
             <img src="{{ url_for('static', filename='img/bin.svg') }}">
@@ -71,7 +120,12 @@
         </div>
       </div>
       <div class="clear-container">
-        <button class="primary-button">Clean History</button> 
+        <div>
+          Clear
+        </div>
+        <div class="clear-container-icon">
+          <img src="{{ url_for('static', filename='img/bin.svg')}}">
+        </div>
       </div>
     </div>
     <!-- Main page -->
