@@ -1,8 +1,14 @@
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
+from flask_assets import Environment, Bundle
 
 app = Flask(__name__)
-bootstrap = Bootstrap(app)
+assets = Environment(app)
+
+# Define your asset bundles here
+css_bundle = Bundle('css/style.scss', output='gen/main.css')
+
+# Register your asset bundles with the environment
+assets.register('css_all', css_bundle)
 
 @app.route('/')
 def index():
